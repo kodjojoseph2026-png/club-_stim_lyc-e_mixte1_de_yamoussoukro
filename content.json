@@ -1,0 +1,1540 @@
+[
+ {
+  "id": "bases",
+  "nom": "Bases du numérique",
+  "ico": "🧭",
+  "c": "#22c55e",
+  "desc": "Le socle commun : vocabulaire, web, réseau et sécurité. Obligatoire pour tous avant toute spécialité.",
+  "modules": [
+   {
+    "id": "b1",
+    "titre": "Ordinateur et téléphone : la même logique",
+    "duree": "15 min",
+    "lecon": [
+     "Un ordinateur, un téléphone et une console ont le même fonctionnement de base : un processeur qui calcule, une mémoire vive (RAM) pour le travail en cours, et un stockage qui garde les données même éteint.",
+     "Le <b>matériel</b> est tout ce qu'on peut toucher. Le <b>logiciel</b> est l'ensemble des instructions qui le font travailler. Le <b>système d'exploitation</b> (Windows, Android, iOS, Linux) fait le lien entre les deux : il gère les ressources et permet aux applications de fonctionner."
+    ],
+    "exemple": "Matériel  : écran, clavier, processeur, disque\nLogiciel  : navigateur, traitement de texte, jeu\nSystème   : Windows, Android, Linux, macOS",
+    "ressources": [
+     {
+      "label": "Apprendre le fonctionnement d'un ordinateur (MDN, fr)",
+      "url": "https://developer.mozilla.org/fr/docs/Learn"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=fonctionnement%20ordinateur%20processeur%20RAM%20expliqu%C3%A9"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Quel élément garde les fichiers même quand l'appareil est éteint ?",
+      "o": [
+       "La RAM",
+       "Le processeur",
+       "Le stockage (disque ou mémoire flash)"
+      ],
+      "r": 2,
+      "e": "Le stockage conserve les données de façon durable."
+     },
+     {
+      "q": "Android est…",
+      "o": [
+       "une application",
+       "un système d'exploitation",
+       "un processeur"
+      ],
+      "r": 1,
+      "e": "Android est le système qui fait tourner les applications."
+     },
+     {
+      "q": "Un navigateur web est…",
+      "o": [
+       "du matériel",
+       "un logiciel",
+       "un câble"
+      ],
+      "r": 1,
+      "e": "C'est un programme installé sur l'appareil."
+     }
+    ]
+   },
+   {
+    "id": "b2",
+    "titre": "Internet, web, digital : les nuances",
+    "duree": "20 min",
+    "lecon": [
+     "<b>Internet</b> est le réseau mondial qui relie des millions d'ordinateurs. Il transporte les données, il ne se limite pas aux sites.",
+     "Le <b>web</b> est l'un des services qui tournent sur Internet : des pages accessibles avec un navigateur, reliées entre elles par des liens. Les e-mails ou la messagerie sont d'autres services d'Internet.",
+     "Le <b>digital</b> (ou numérique) désigne l'usage de ces technologies dans la vie et l'économie : commerce en ligne, réseaux sociaux, paiement mobile, marketing digital. C'est un terme plus large qui englobe Internet et le web."
+    ],
+    "exemple": "Internet  = le réseau (les routes)\nWeb       = les pages consultées sur ce réseau (les magasins)\nDigital   = tout ce que ces technologies transforment (le commerce, l'école, la santé…)",
+    "ressources": [
+     {
+      "label": "Comment fonctionne Internet (MDN)",
+      "url": "https://developer.mozilla.org/fr/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=diff%C3%A9rence%20internet%20et%20web%20expliqu%C3%A9e"
+     },
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=internet%20vs%20world%20wide%20web%20explained"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Le web est…",
+      "o": [
+       "Un réseau de câbles",
+       "Un service qui fonctionne sur Internet",
+       "Un système d'exploitation"
+      ],
+      "r": 1,
+      "e": "Le web est un service d'Internet, accessible par navigateur."
+     },
+     {
+      "q": "Une messagerie électronique fait partie…",
+      "o": [
+       "du web uniquement",
+       "d'Internet, pas seulement du web",
+       "de la RAM"
+      ],
+      "r": 1,
+      "e": "Internet transporte plusieurs services, dont le web et l'e-mail."
+     },
+     {
+      "q": "Le digital désigne surtout…",
+      "o": [
+       "la fabrication des processeurs",
+       "l'usage des technologies numériques dans la vie et l'économie",
+       "les câbles sous-marins"
+      ],
+      "r": 1,
+      "e": "C'est un terme large sur les usages."
+     }
+    ]
+   },
+   {
+    "id": "b3",
+    "titre": "Client, serveur et adresse web",
+    "duree": "15 min",
+    "lecon": [
+     "Quand tu ouvres une page, ton appareil (le <b>client</b>) demande une ressource à un <b>serveur</b>, qui la renvoie. Le navigateur l'affiche.",
+     "Une adresse comme <i>https://www.ecole.ci/cours/maths</i> contient un protocole (https), un nom de domaine (ecole.ci) et un chemin (/cours/maths). Le <b>HTTPS</b> ajoute un chiffrement : les échanges sont protégés."
+    ],
+    "exemple": "Client  → « Donne-moi /cours/maths »  → Serveur\nServeur → « Voici la page (HTML) »           → Client\nNavigateur : affiche la page",
+    "ressources": [
+     {
+      "label": "Le fonctionnement du web (MDN)",
+      "url": "https://developer.mozilla.org/fr/docs/Learn/Getting_started_with_the_web/How_the_Web_works"
+     },
+     {
+      "label": "The Odin Project : fondamentaux",
+      "url": "https://www.theodinproject.com"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=client%20serveur%20comment%20fonctionne%20le%20web"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Dans une requête web, le serveur…",
+      "o": [
+       "demande la page",
+       "renvoie la ressource demandée",
+       "affiche la page à l'écran"
+      ],
+      "r": 1,
+      "e": "Le serveur répond aux demandes."
+     },
+     {
+      "q": "Dans https://ecole.ci/cours, le nom de domaine est…",
+      "o": [
+       "https",
+       "ecole.ci",
+       "cours"
+      ],
+      "r": 1,
+      "e": "Le domaine identifie le site."
+     },
+     {
+      "q": "Le « S » de HTTPS signifie…",
+      "o": [
+       "Site",
+       "Sécurisé (chiffré)",
+       "Serveur"
+      ],
+      "r": 1,
+      "e": "Les échanges sont chiffrés."
+     }
+    ]
+   },
+   {
+    "id": "b4",
+    "titre": "Données, sécurité et esprit critique",
+    "duree": "20 min",
+    "lecon": [
+     "Sur Internet, tes données ont de la valeur. Protège-les : mots de passe longs et différents pour chaque service, activation de la double authentification quand elle existe.",
+     "Le <b>hameçonnage</b> (phishing) imite un message officiel pour voler des identifiants. Avant de cliquer, vérifie l'expéditeur et l'adresse du site, et ne donne jamais un code reçu par SMS à quelqu'un qui te le demande.",
+     "L'esprit critique consiste à vérifier une information : qui la publie, à quelle date, et si d'autres sources sérieuses la confirment."
+    ],
+    "exemple": "Mauvais  : motdepasse123\nMieux   : une phrase longue et unique, par ex. « Mon club a gagné 3 matchs en mai ! »\nAstuce  : un gestionnaire de mots de passe",
+    "ressources": [
+     {
+      "label": "Sécurité sur Internet (ANSSI, fr)",
+      "url": "https://cyber.gouv.fr"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=hame%C3%A7onnage%20phishing%20comment%20le%20reconna%C3%AEtre"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Le phishing consiste à…",
+      "o": [
+       "réparer un ordinateur",
+       "imiter un message officiel pour voler des informations",
+       "accélérer Internet"
+      ],
+      "r": 1,
+      "e": "C'est une tentative d'arnaque."
+     },
+     {
+      "q": "Le meilleur réflexe face à un message urgent demandant un code ?",
+      "o": [
+       "Répondre vite",
+       "Vérifier l'expéditeur et passer par le site officiel",
+       "Transmettre le code"
+      ],
+      "r": 1,
+      "e": "Ne jamais donner de code à quelqu'un qui le demande."
+     },
+     {
+      "q": "Un bon mot de passe est…",
+      "o": [
+       "court et simple",
+       "long, unique et différent pour chaque service",
+       "identique partout"
+      ],
+      "r": 1,
+      "e": "Un mot de passe unique limite les dégâts."
+     }
+    ]
+   },
+   {
+    "id": "b5",
+    "titre": "Page web et site web : quelle différence ?",
+    "duree": "15 min",
+    "lecon": [
+     "Une <b>page web</b> est un document affiché dans le navigateur, écrit en HTML, avec un titre, du texte, des images et des liens.",
+     "Un <b>site web</b> est un ensemble de pages reliées entre elles, souvent sous un même nom de domaine, avec une navigation et une identité commune (accueil, cours, contact…)."
+    ],
+    "exemple": "Page web : https://ecole.ci/cours/maths       (une seule page)\nSite web  : ecole.ci                            (toutes les pages du site)",
+    "ressources": [
+     {
+      "label": "Découvrir le web (MDN, fr)",
+      "url": "https://developer.mozilla.org/fr/docs/Learn/Getting_started_with_the_web"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=page+web+site+web+différence"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Une page web est…",
+      "o": [
+       "un ensemble de sites",
+       "un document affiché dans le navigateur",
+       "un serveur"
+      ],
+      "r": 1,
+      "e": "Une page est un document unique."
+     },
+     {
+      "q": "Un site web est…",
+      "o": [
+       "une seule image",
+       "un ensemble de pages reliées, souvent sous un même nom de domaine",
+       "un câble réseau"
+      ],
+      "r": 1,
+      "e": "Un site regroupe plusieurs pages."
+     },
+     {
+      "q": "Le site ecole.ci contient plusieurs pages (accueil, cours…). Il s'agit donc…",
+      "o": [
+       "d'une page",
+       "d'un site web",
+       "d'une adresse IP"
+      ],
+      "r": 1,
+      "e": "Plusieurs pages reliées = un site."
+     }
+    ]
+   },
+   {
+    "id": "b6",
+    "titre": "Serveur web : héberger un site",
+    "duree": "20 min",
+    "lecon": [
+     "Un <b>serveur web</b> est un ordinateur, ou un service, qui stocke les fichiers d'un site et les renvoie aux navigateurs qui les demandent.",
+     "Il fait tourner un <b>logiciel serveur</b> comme Apache ou Nginx. Un <b>hébergeur</b> loue cet espace et la connexion, pour que le site soit accessible en permanence."
+    ],
+    "exemple": "Navigateur → « Donne-moi la page d'accueil »\nServeur web (Apache, Nginx…) → renvoie index.html",
+    "ressources": [
+     {
+      "label": "Comment fonctionne le web (MDN)",
+      "url": "https://developer.mozilla.org/fr/docs/Learn/Getting_started_with_the_web/How_the_Web_works"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=serveur+web+expliqué+débutant"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Un serveur web sert à…",
+      "o": [
+       "stocker et renvoyer les pages d'un site",
+       "afficher les pages dans le navigateur",
+       "réparer les câbles"
+      ],
+      "r": 0,
+      "e": "Le serveur fournit les ressources demandées."
+     },
+     {
+      "q": "Apache et Nginx sont…",
+      "o": [
+       "des navigateurs",
+       "des logiciels serveur web",
+       "des adresses IP"
+      ],
+      "r": 1,
+      "e": "Ce sont des logiciels qui servent les pages."
+     },
+     {
+      "q": "Un hébergeur fournit…",
+      "o": [
+       "un écran",
+       "de l'espace et une connexion pour un site",
+       "un navigateur"
+      ],
+      "r": 1,
+      "e": "Il met à disposition l'infrastructure."
+     }
+    ]
+   },
+   {
+    "id": "b7",
+    "titre": "Adresse IP et DNS : comment on trouve un site",
+    "duree": "20 min",
+    "lecon": [
+     "Chaque appareil connecté possède une <b>adresse IP</b>, un numéro qui l'identifie sur le réseau. Exemple : 192.168.1.23 sur un réseau local.",
+     "Les humains utilisent des noms (ecole.ci). Le <b>DNS</b> (Domain Name System) traduit ce nom en adresse IP, comme un annuaire. Une adresse IP ne donne pas forcément la position exacte de la personne."
+    ],
+    "exemple": "ecole.ci  →  DNS  →  203.0.113.25  (adresse IP du serveur)\nTon téléphone sur le Wi-Fi : 192.168.1.23 (exemple)",
+    "ressources": [
+     {
+      "label": "Comment fonctionne Internet (MDN)",
+      "url": "https://developer.mozilla.org/fr/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=adresse+IP+et+DNS+expliqués"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=what+is+an+IP+address+and+DNS+explained"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Une adresse IP sert à…",
+      "o": [
+       "décorer l'écran",
+       "identifier un appareil sur un réseau",
+       "fabriquer un site"
+      ],
+      "r": 1,
+      "e": "Elle identifie chaque appareil connecté."
+     },
+     {
+      "q": "Le DNS sert à…",
+      "o": [
+       "traduire un nom de domaine en adresse IP",
+       "chiffrer les mots de passe",
+       "stocker des photos"
+      ],
+      "r": 0,
+      "e": "C'est l'annuaire d'Internet."
+     },
+     {
+      "q": "192.168.1.23 est…",
+      "o": [
+       "une adresse IP",
+       "un nom de domaine",
+       "un mot de passe"
+      ],
+      "r": 0,
+      "e": "Ce format numérique est une adresse IP."
+     }
+    ]
+   },
+   {
+    "id": "b8",
+    "titre": "Le vocabulaire du numérique",
+    "duree": "20 min",
+    "lecon": [
+     "Un <b>logiciel</b> ou une <b>application</b> est un programme. Une <b>URL</b> est l'adresse complète d'une ressource. Un <b>lien hypertexte</b> relie deux pages.",
+     "Le <b>cloud</b> désigne des services et des fichiers stockés sur des serveurs distants, accessibles depuis n'importe quel appareil. Une <b>base de données</b> organise les informations (utilisateurs, produits, notes) pour les retrouver rapidement. Un <b>moteur de recherche</b> indexe des pages pour répondre à une requête."
+    ],
+    "exemple": "URL      : https://ecole.ci/cours/maths\nCloud    : tes fichiers sur un serveur, pas seulement sur ton téléphone\nBase     : tableau de notes où chaque ligne = un élève",
+    "ressources": [
+     {
+      "label": "Glossaire du web (MDN, fr)",
+      "url": "https://developer.mozilla.org/fr/docs/Glossary"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=vocabulaire+informatique+débutant+cloud+serveur"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Une URL est…",
+      "o": [
+       "l'adresse complète d'une ressource sur le web",
+       "un logiciel de bureau",
+       "un câble"
+      ],
+      "r": 0,
+      "e": "Elle indique où trouver la ressource."
+     },
+     {
+      "q": "Le cloud désigne…",
+      "o": [
+       "des nuages dans le ciel",
+       "des services et fichiers stockés sur des serveurs distants",
+       "un type d'écran"
+      ],
+      "r": 1,
+      "e": "Le stockage est distant mais accessible partout."
+     },
+     {
+      "q": "Une base de données sert à…",
+      "o": [
+       "organiser et retrouver rapidement des informations",
+       "afficher des images en couleur",
+       "relier deux câbles"
+      ],
+      "r": 0,
+      "e": "Elle structure les données."
+     }
+    ]
+   },
+   {
+    "id": "b9",
+    "titre": "Le terminal : commander l'ordinateur par le texte",
+    "duree": "25 min",
+    "lecon": [
+     "Le <b>terminal</b> (ou invite de commandes) permet de donner des ordres à l'ordinateur en tapant du texte. Sous Linux et macOS, on utilise le shell <b>Bash</b>.",
+     "Commandes essentielles : <b>ls</b> liste le contenu d'un dossier (<b>ls -la</b> montre aussi les fichiers cachés), <b>cd</b> change de dossier (<b>cd ..</b> remonte d'un niveau), <b>mkdir</b> crée un dossier (<b>mkdir -p</b> crée aussi les dossiers parents), <b>cp</b> copie, <b>rm</b> supprime. Avant de supprimer, vérifie bien ce que tu tapes : il n'y a pas de corbeille."
+    ],
+    "exemple": "ls -la\ncd Documents\nmkdir -p projets/robot\ndf -h      # espace disque disponible\nfree -m    # utilisation de la RAM",
+    "ressources": [
+     {
+      "label": "Introduction au terminal (Ubuntu fr)",
+      "url": "https://doc.ubuntu-fr.org/terminal"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=terminal+linux+débutant+commandes+de+base"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Quelle commande liste le contenu d'un dossier ?",
+      "o": [
+       "cd",
+       "ls",
+       "mkdir"
+      ],
+      "r": 1,
+      "e": "ls signifie « list »."
+     },
+     {
+      "q": "Que fait mkdir -p projets/robot ?",
+      "o": [
+       "Supprime un dossier",
+       "Crée les dossiers parents si besoin",
+       "Copie un fichier"
+      ],
+      "r": 1,
+      "e": "L'option -p crée toute la hiérarchie."
+     },
+     {
+      "q": "Que fait cd .. ?",
+      "o": [
+       "Entre dans le dossier courant",
+       "Remonte d'un niveau",
+       "Supprime le dossier"
+      ],
+      "r": 1,
+      "e": ".. désigne le dossier parent."
+     }
+    ]
+   },
+   {
+    "id": "b10",
+    "titre": "Binaire, hexadécimal et codage",
+    "duree": "25 min",
+    "lecon": [
+     "L'ordinateur ne connaît que 0 et 1 : le <b>bit</b>. Un <b>octet</b> regroupe 8 bits, soit 256 valeurs possibles (0 à 255).",
+     "Pour convertir un nombre décimal en binaire, on fait des divisions successives par 2 et on lit les restes à l'envers. L'<b>hexadécimal</b> (base 16, chiffres 0-9 et A-F) est une écriture plus courte : un octet s'écrit avec deux chiffres hexadécimaux. En <b>ASCII</b>, la lettre A vaut 65, soit 0100 0001."
+    ],
+    "exemple": "42  = 0010 1010 (binaire) = 2A (hexadécimal)\n255 = 1111 1111 (binaire) = FF (hexadécimal)\nA   = 65 = 0100 0001 (ASCII)",
+    "ressources": [
+     {
+      "label": "Systèmes de numération (MDN, fr)",
+      "url": "https://developer.mozilla.org/fr/docs/Glossary/Bit"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=binaire+hexadécimal+expliqué+débutant"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Combien de bits dans un octet ?",
+      "o": [
+       "4",
+       "8",
+       "16"
+      ],
+      "r": 1,
+      "e": "Un octet = 8 bits."
+     },
+     {
+      "q": "Valeur hexadécimale de 255 ?",
+      "o": [
+       "FF",
+       "EE",
+       "100"
+      ],
+      "r": 0,
+      "e": "F = 15, donc FF = 255."
+     },
+     {
+      "q": "42 en binaire sur 8 bits ?",
+      "o": [
+       "0010 1010",
+       "1010 0010",
+       "0101 0100"
+      ],
+      "r": 0,
+      "e": "32 + 8 + 2 = 42."
+     }
+    ]
+   }
+  ],
+  "obligatoire": true,
+  "gate": false
+ },
+ {
+  "id": "prog",
+  "nom": "Informatique & programmation",
+  "ico": "💻",
+  "c": "#3b82f6",
+  "gate": true,
+  "desc": "Penser comme un programmeur, puis écrire du Python. Accessible à partir de 10/20 aux modules Bases.",
+  "modules": [
+   {
+    "id": "p1",
+    "titre": "L'algorithme : penser en étapes",
+    "duree": "20 min",
+    "lecon": [
+     "Un <b>algorithme</b> est une suite d'étapes précises qui résout un problème. Une recette de cuisine en est un. Un programme n'est qu'un algorithme écrit dans un langage compris par la machine.",
+     "L'ordinateur exécute exactement ce qui est écrit, sans deviner. Chaque étape doit donc être simple, ordonnée et sans ambiguïté."
+    ],
+    "exemple": "Problème : afficher le plus grand de deux nombres a et b\n1. Lire a\n2. Lire b\n3. Si a > b, afficher a\n4. Sinon, afficher b",
+    "ressources": [
+     {
+      "label": "The Odin Project — Fundamentals",
+      "url": "https://www.theodinproject.com"
+     },
+     {
+      "label": "Tutoriel Python officiel (fr)",
+      "url": "https://docs.python.org/fr/3/tutorial/"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=algorithme%20pour%20d%C3%A9butants%20expliqu%C3%A9"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Un algorithme est…",
+      "o": [
+       "un ordinateur",
+       "une suite d'étapes précises pour résoudre un problème",
+       "un langage de programmation uniquement"
+      ],
+      "r": 1,
+      "e": "C'est une démarche, indépendante du langage."
+     },
+     {
+      "q": "L'ordinateur devine-t-il l'intention d'une instruction vague ?",
+      "o": [
+       "Oui, toujours",
+       "Non, il exécute ce qui est écrit"
+      ],
+      "r": 1,
+      "e": "Il faut tout préciser."
+     },
+     {
+      "q": "Dans l'exemple, si a = 4 et b = 9, quel résultat ?",
+      "o": [
+       "4",
+       "9",
+       "13"
+      ],
+      "r": 1,
+      "e": "9 est plus grand que 4."
+     }
+    ]
+   },
+   {
+    "id": "p2",
+    "titre": "Variables et types de données",
+    "duree": "25 min",
+    "lecon": [
+     "Une <b>variable</b> est un nom associé à une valeur. Elle peut changer pendant l'exécution du programme.",
+     "On distingue les types principaux : les <b>entiers</b> (7), les <b>décimaux</b> (13.5), les <b>textes</b> (\"Awa\") et les <b>booléens</b> (True ou False). Le type détermine les opérations possibles : on peut additionner deux nombres, mais pas « concaténer » un nombre à un texte sans le convertir."
+    ],
+    "exemple": "age = 17\nnom = \"Awa\"\nmoyenne = 13.5\nest_admis = moyenne >= 10   # True\nage = age + 1               # age vaut maintenant 18",
+    "ressources": [
+     {
+      "label": "Types de données (docs Python fr)",
+      "url": "https://docs.python.org/fr/3/library/stdtypes.html"
+     },
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=python%20variables%20and%20data%20types%20beginners"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=python%20variables%20types%20d%C3%A9butant"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Avec age = 17 puis age = age + 1, age vaut…",
+      "o": [
+       "17",
+       "18",
+       "171"
+      ],
+      "r": 1,
+      "e": "La valeur est recalculée puis réaffectée."
+     },
+     {
+      "q": "\"Awa\" est de quel type ?",
+      "o": [
+       "Entier",
+       "Texte",
+       "Booléen"
+      ],
+      "r": 1,
+      "e": "Entre guillemets, c'est du texte."
+     },
+     {
+      "q": "moyenne >= 10 produit…",
+      "o": [
+       "un texte",
+       "un booléen (True ou False)",
+       "un décimal"
+      ],
+      "r": 1,
+      "e": "La comparaison renvoie True ou False."
+     }
+    ]
+   },
+   {
+    "id": "p3",
+    "titre": "Conditions et boucles",
+    "duree": "30 min",
+    "lecon": [
+     "Une <b>condition</b> (<code>if</code>, <code>else</code>) choisit un chemin selon une vérification. Une <b>boucle</b> répète une action : <code>for</code> pour un nombre de tours connu, <code>while</code> tant qu'une condition reste vraie.",
+     "Attention aux boucles sans fin : il faut toujours une condition qui finit par devenir fausse."
+    ],
+    "exemple": "for i in range(3):\n    print(\"Tour\", i)        # Tour 0, 1, 2\n\nnote = 8\nif note >= 10:\n    print(\"Admis\")\nelse:\n    print(\"Recalé\")",
+    "ressources": [
+     {
+      "label": "Structures de contrôle (docs Python fr)",
+      "url": "https://docs.python.org/fr/3/tutorial/controlflow.html"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=python%20if%20else%20boucle%20for%20while"
+     },
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=python%20loops%20and%20conditionals%20tutorial"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "range(3) produit combien de tours (0, 1, 2) ?",
+      "o": [
+       "2",
+       "3",
+       "4"
+      ],
+      "r": 1,
+      "e": "range(3) commence à 0 et s'arrête avant 3."
+     },
+     {
+      "q": "Quel est le rôle de else ?",
+      "o": [
+       "Répéter une action",
+       "Le cas « sinon » quand la condition est fausse",
+       "Définir une fonction"
+      ],
+      "r": 1,
+      "e": "else gère l'alternative."
+     },
+     {
+      "q": "Qu'est-ce qui évite une boucle infinie ?",
+      "o": [
+       "Une condition qui devient fausse à un moment",
+       "Un clavier plus rapide",
+       "Rien"
+      ],
+      "r": 0,
+      "e": "La condition de sortie doit être atteignable."
+     }
+    ]
+   },
+   {
+    "id": "p4",
+    "titre": "Fonctions : écrire une fois, réutiliser",
+    "duree": "25 min",
+    "lecon": [
+     "Une <b>fonction</b> regroupe un bloc de code sous un nom. Elle reçoit des <b>paramètres</b>, traite les données et peut renvoyer un résultat avec <code>return</code>.",
+     "Une bonne fonction fait une seule chose et porte un nom clair. C'est la base de tout programme structuré."
+    ],
+    "exemple": "def moyenne(a, b):\n    return (a + b) / 2\n\nprint(moyenne(12, 15))   # 13.5",
+    "ressources": [
+     {
+      "label": "Définir des fonctions (docs Python fr)",
+      "url": "https://docs.python.org/fr/3/tutorial/controlflow.html#defining-functions"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=python%20fonctions%20def%20return%20expliqu%C3%A9"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Le mot-clé pour définir une fonction en Python est…",
+      "o": [
+       "def",
+       "if",
+       "for"
+      ],
+      "r": 0,
+      "e": "def signifie « définir »."
+     },
+     {
+      "q": "Que fait return ?",
+      "o": [
+       "Efface l'écran",
+       "Renvoie un résultat à l'appelant",
+       "Lance une boucle"
+      ],
+      "r": 1,
+      "e": "return transmet la valeur produite."
+     },
+     {
+      "q": "moyenne(12, 15) renvoie…",
+      "o": [
+       "27",
+       "13.5",
+       "1215"
+      ],
+      "r": 1,
+      "e": "(12 + 15) / 2 = 13.5."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "robot",
+  "nom": "Robotique",
+  "ico": "🤖",
+  "c": "#f97316",
+  "desc": "Capteurs, moteurs, boucles de contrôle : comment un robot perçoit, décide et agit.",
+  "modules": [
+   {
+    "id": "r1",
+    "titre": "Capteurs et actionneurs",
+    "duree": "20 min",
+    "lecon": [
+     "Un robot fonctionne en trois temps : il <b>perçoit</b> avec des capteurs (distance, lumière, contact, température), il <b>décide</b> avec un programme, il <b>agit</b> avec des actionneurs (moteurs, servomoteurs, LED, haut-parleur).",
+     "Un capteur transforme une grandeur physique en signal électrique. Le programme doit interpréter ce signal, par exemple convertir une tension en distance, et tenir compte de l'imprécision de la mesure."
+    ],
+    "exemple": "Capteur à ultrasons : mesure le temps d'écho\n  distance = (temps × 343 m/s) / 2   # vitesse du son\nMoteur : reçoit une vitesse (de 0 à 100 %)",
+    "ressources": [
+     {
+      "label": "Introduction à Arduino (docs officielles)",
+      "url": "https://docs.arduino.cc/learn/"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=capteur%20ultrason%20arduino%20tutoriel"
+     },
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=how%20ultrasonic%20sensors%20work%20robotics"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Un moteur est…",
+      "o": [
+       "un capteur",
+       "un actionneur",
+       "un processeur"
+      ],
+      "r": 1,
+      "e": "Il agit sur le monde."
+     },
+     {
+      "q": "Un capteur à ultrasons mesure…",
+      "o": [
+       "une température",
+       "une distance",
+       "une couleur uniquement"
+      ],
+      "r": 1,
+      "e": "Il mesure l'écho pour estimer la distance."
+     },
+     {
+      "q": "Pourquoi la mesure d'un capteur n'est-elle jamais parfaite ?",
+      "o": [
+       "Le capteur est toujours cassé",
+       "Il y a du bruit et des imprécisions",
+       "Les robots ne mesurent pas"
+      ],
+      "r": 1,
+      "e": "Il faut tenir compte de l'incertitude."
+     }
+    ]
+   },
+   {
+    "id": "r2",
+    "titre": "La boucle de contrôle",
+    "duree": "25 min",
+    "lecon": [
+     "Un robot répète en permanence un cycle : <b>lire les capteurs → décider → agir</b>. Plus ce cycle est rapide, plus le robot réagit vite.",
+     "Pour un robot qui évite un obstacle, la décision est simple : si la distance est trop courte, on tourne ; sinon, on avance."
+    ],
+    "exemple": "tant que vrai:\n    d = lire_distance()\n    si d < 20 cm:\n        tourner()\n    sinon:\n        avancer()",
+    "ressources": [
+     {
+      "label": "Boucles et conditions en Python (fr)",
+      "url": "https://docs.python.org/fr/3/tutorial/controlflow.html"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=boucle%20de%20contr%C3%B4le%20robot%20%C3%A9vitement%20obstacle"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Une boucle de contrôle répète…",
+      "o": [
+       "lire, décider, agir",
+       "éteindre, rallumer",
+       "installer, supprimer"
+      ],
+      "r": 0,
+      "e": "C'est le cycle de base."
+     },
+     {
+      "q": "Un robot tourne en rond sans s'arrêter. Quelle est la cause probable ?",
+      "o": [
+       "Il est trop rapide",
+       "Une condition de sortie manquante ou une mesure erronée",
+       "La couleur"
+      ],
+      "r": 1,
+      "e": "Vérifier la logique et les capteurs."
+     },
+     {
+      "q": "Si distance < 20 cm alors tourner, sinon avancer, c'est…",
+      "o": [
+       "une condition",
+       "une boucle sans fin",
+       "une fonction sans retour"
+      ],
+      "r": 0,
+      "e": "C'est une décision (if / else)."
+     }
+    ]
+   },
+   {
+    "id": "r3",
+    "titre": "Projet : robot suiveur de ligne",
+    "duree": "40 min",
+    "lecon": [
+     "Un robot suiveur de ligne utilise deux capteurs infrarouges placés sous le châssis. Le sol clair réfléchit la lumière, la ligne noire l'absorbe.",
+     "La logique : si le capteur gauche voit la ligne, tourner à gauche ; si le droit la voit, tourner à droite ; sinon avancer droit. Tester avec une piste simple d'abord, puis complexifier."
+    ],
+    "exemple": "si capteur_gauche voit noir:\n    tourner_gauche()\nsinon si capteur_droit voit noir:\n    tourner_droite()\nsinon:\n    avancer()",
+    "ressources": [
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=robot%20suiveur%20de%20ligne%20arduino%20projet"
+     },
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=line%20following%20robot%20tutorial"
+     },
+     {
+      "label": "Guides Arduino",
+      "url": "https://docs.arduino.cc/learn/"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Pourquoi un capteur infrarouge détecte-t-il la ligne noire ?",
+      "o": [
+       "Parce que le noir réfléchit mieux",
+       "Parce que le noir absorbe la lumière et réfléchit moins",
+       "Parce que le noir chauffe"
+      ],
+      "r": 1,
+      "e": "Moins de réflexion = signal différent."
+     },
+     {
+      "q": "Le robot doit tourner à gauche quand…",
+      "o": [
+       "le capteur gauche voit la ligne",
+       "le capteur droit voit la ligne",
+       "aucun capteur ne voit rien"
+      ],
+      "r": 0,
+      "e": "Le capteur qui voit la ligne indique la direction."
+     },
+     {
+      "q": "Pourquoi tester d'abord sur une piste simple ?",
+      "o": [
+       "Pour aller plus vite",
+       "Pour isoler les problèmes étape par étape",
+       "Par tradition"
+      ],
+      "r": 1,
+      "e": "On progresse par petites étapes validées."
+     }
+    ]
+   }
+  ],
+  "gate": false
+ },
+ {
+  "id": "ia",
+  "nom": "Intelligence artificielle",
+  "ico": "🧠",
+  "c": "#a855f7",
+  "desc": "Comprendre ce qu'est l'IA, comment elle apprend à partir de données, et ses limites.",
+  "modules": [
+   {
+    "id": "i1",
+    "titre": "Qu'est-ce que l'IA ?",
+    "duree": "20 min",
+    "lecon": [
+     "L'<b>intelligence artificielle</b> désigne des systèmes capables d'accomplir des tâches qui demandent normalement de l'intelligence humaine : reconnaître une voix, traduire, recommander un film.",
+     "Il faut distinguer une <b>règle écrite à la main</b> (si... alors...) et un <b>modèle appris</b> à partir d'exemples. L'apprentissage automatique (machine learning) fait partie des approches les plus utilisées aujourd'hui."
+    ],
+    "exemple": "Règle écrite   : si température > 30 → allumer le ventilateur\nModèle appris  : des milliers d'exemples → le système apprend à reconnaître un chat",
+    "ressources": [
+     {
+      "label": "Teachable Machine (IA sans code)",
+      "url": "https://teachablemachine.withgoogle.com"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=qu'est-ce%20que%20l'intelligence%20artificielle%20expliqu%C3%A9"
+     },
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=what%20is%20machine%20learning%20explained%20simply"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Une règle écrite à la main (si…alors) est…",
+      "o": [
+       "de l'apprentissage automatique",
+       "une règle explicite, pas un modèle appris",
+       "une image"
+      ],
+      "r": 1,
+      "e": "Un modèle appris découvre ses règles à partir des données."
+     },
+     {
+      "q": "Reconnaître une voix est…",
+      "o": [
+       "une tâche typique d'IA",
+       "impossible pour une machine",
+       "un calcul sans données"
+      ],
+      "r": 0,
+      "e": "C'est un domaine classique de l'IA."
+     },
+     {
+      "q": "Qu'est-ce que l'apprentissage automatique ?",
+      "o": [
+       "Un ordinateur qui apprend sans données",
+       "Un modèle qui apprend à partir d'exemples",
+       "Un logiciel de bureautique"
+      ],
+      "r": 1,
+      "e": "Il apprend à partir de données."
+     }
+    ]
+   },
+   {
+    "id": "i2",
+    "titre": "Données et entraînement",
+    "duree": "25 min",
+    "lecon": [
+     "Un modèle s'entraîne sur des <b>données d'entraînement</b>, puis on évalue sa performance sur des <b>données de test</b> qu'il n'a jamais vues. Sans cette séparation, on croit à tort qu'un modèle est bon.",
+     "Plus les données sont nombreuses et variées, meilleur est le modèle. Mais la qualité compte autant que la quantité."
+    ],
+    "exemple": "1000 photos étiquetées « chat » ou « chien »\n  → 800 pour entraîner\n  → 200 pour tester (le modèle ne les a jamais vues)",
+    "ressources": [
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=train%20test%20split%20machine%20learning%20explained"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=donn%C3%A9es%20d'entra%C3%AEnement%20et%20de%20test%20IA"
+     },
+     {
+      "label": "Cours IA pour débutants (Google)",
+      "url": "https://developers.google.com/machine-learning/crash-course"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "À quoi servent les données de test ?",
+      "o": [
+       "À entraîner le modèle",
+       "À évaluer le modèle sur des cas inconnus",
+       "À stocker des images"
+      ],
+      "r": 1,
+      "e": "Elles mesurent la performance réelle."
+     },
+     {
+      "q": "Plus de données, c'est toujours mieux ?",
+      "o": [
+       "Oui, toujours",
+       "Pas forcément : la qualité et la variété comptent aussi",
+       "Non, il ne faut jamais en utiliser"
+      ],
+      "r": 1,
+      "e": "Des données de mauvaise qualité nuisent au modèle."
+     },
+     {
+      "q": "Un modèle qui réussit parfaitement sur les données d'entraînement mais échoue ailleurs…",
+      "o": [
+       "est parfait",
+       "est peut-être sur-appris (surapprentissage)",
+       "a un problème de clavier"
+      ],
+      "r": 1,
+      "e": "Il ne généralise pas."
+     }
+    ]
+   },
+   {
+    "id": "i3",
+    "titre": "Biais, limites et éthique",
+    "duree": "20 min",
+    "lecon": [
+     "Un modèle reproduit les biais présents dans ses données. Si un système de recrutement a été entraîné sur des profils majoritairement masculins, il peut défavoriser les autres candidats sans que personne ne l'ait voulu.",
+     "L'IA peut aussi se tromper avec assurance. Toujours vérifier les résultats importants, et se demander qui est responsable en cas d'erreur."
+    ],
+    "exemple": "Question à se poser avant d'utiliser un outil d'IA :\n- Sur quelles données a-t-il été entraîné ?\n- Qui peut être désavantagé ?\n- Comment vérifier son résultat ?",
+    "ressources": [
+     {
+      "label": "Recommandations sur l'IA (CNIL, fr)",
+      "url": "https://www.cnil.fr/fr/intelligence-artificielle"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=biais%20algorithmique%20IA%20explication"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Un modèle peut reproduire…",
+      "o": [
+       "uniquement des erreurs techniques",
+       "les biais présents dans ses données",
+       "rien de ce qu'il a appris"
+      ],
+      "r": 1,
+      "e": "Il apprend ce qu'on lui montre."
+     },
+     {
+      "q": "Quelle attitude est la plus responsable face à un résultat d'IA ?",
+      "o": [
+       "Le croire aveuglément",
+       "Le vérifier, surtout s'il est important",
+       "Ne jamais l'utiliser"
+      ],
+      "r": 1,
+      "e": "Vérifier reste indispensable."
+     },
+     {
+      "q": "Qui est responsable d'une décision prise avec l'aide d'une IA ?",
+      "o": [
+       "L'IA elle-même",
+       "Les humains qui la conçoivent et l'utilisent",
+       "Personne"
+      ],
+      "r": 1,
+      "e": "La responsabilité reste humaine."
+     }
+    ]
+   }
+  ],
+  "gate": false
+ },
+ {
+  "id": "av",
+  "nom": "Audio-visuel & vidéo animée",
+  "ico": "🎬",
+  "c": "#ec4899",
+  "desc": "Comprendre l'image, le son et la vidéo numériques, puis créer des animations.",
+  "modules": [
+   {
+    "id": "a1",
+    "titre": "L'image numérique : pixels et couleurs",
+    "duree": "20 min",
+    "lecon": [
+     "Une image numérique est une grille de <b>pixels</b>. Chaque pixel a une couleur codée en trois valeurs : rouge, vert, bleu (RVB), de 0 à 255 chacune.",
+     "La <b>résolution</b> indique le nombre de pixels (1920 × 1080 pour la Full HD). Plus elle est grande, plus l'image est détaillée, mais plus le fichier est lourd."
+    ],
+    "exemple": "Pixel rouge pur  : R=255, V=0,   B=0\nPixel blanc      : R=255, V=255, B=255\nPixel noir       : R=0,   V=0,   B=0",
+    "ressources": [
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=how%20digital%20images%20work%20pixels%20RGB"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=pixels%20r%C3%A9solution%20RVB%20expliqu%C3%A9"
+     },
+     {
+      "label": "Gimp, logiciel de retouche gratuit",
+      "url": "https://www.gimp.org"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Un pixel est…",
+      "o": [
+       "Une image entière",
+       "Le plus petit élément d'une image numérique",
+       "Un logiciel"
+      ],
+      "r": 1,
+      "e": "L'image est une grille de pixels."
+     },
+     {
+      "q": "RVB signifie…",
+      "o": [
+       "Rouge, vert, bleu",
+       "Rapide, vidéo, binaire",
+       "Rouge, vert, blanc"
+      ],
+      "r": 0,
+      "e": "Ce sont les trois couleurs primaires lumineuses."
+     },
+     {
+      "q": "Une résolution plus élevée donne…",
+      "o": [
+       "une image plus floue",
+       "une image plus détaillée et un fichier plus lourd",
+       "une image plus petite"
+      ],
+      "r": 1,
+      "e": "Plus de pixels = plus de détails."
+     }
+    ]
+   },
+   {
+    "id": "a2",
+    "titre": "Le son numérique",
+    "duree": "20 min",
+    "lecon": [
+     "Le son est une vibration de l'air. Pour le numériser, on mesure sa valeur à intervalles réguliers : c'est l'<b>échantillonnage</b>. La <b>fréquence d'échantillonnage</b> de 44,1 kHz (CD) signifie 44 100 mesures par seconde.",
+     "Plus il y a de mesures et plus elles sont précises (profondeur de bits), plus le son est fidèle."
+    ],
+    "exemple": "Fréquence d'échantillonnage : 44 100 Hz (CD)\nProfondeur : 16 bits\nDébit approximatif d'un son stéréo CD : 1411 kbit/s",
+    "ressources": [
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=digital%20audio%20sampling%20rate%20bit%20depth%20explained"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=%C3%A9chantillonnage%20son%20num%C3%A9rique%2044%2C1%20kHz"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Qu'est-ce que l'échantillonnage ?",
+      "o": [
+       "Mesurer le son à intervalles réguliers",
+       "Augmenter le volume",
+       "Compresser une vidéo"
+      ],
+      "r": 0,
+      "e": "Le son est mesuré périodiquement."
+     },
+     {
+      "q": "44,1 kHz signifie…",
+      "o": [
+       "44 100 mesures par seconde",
+       "44 100 octets",
+       "44 mégahertz"
+      ],
+      "r": 0,
+      "e": "Hertz = nombre par seconde."
+     },
+     {
+      "q": "Une profondeur de bits plus élevée permet…",
+      "o": [
+       "une précision plus fine",
+       "une image plus grande",
+       "rien de particulier"
+      ],
+      "r": 0,
+      "e": "Chaque mesure est plus précise."
+     }
+    ]
+   },
+   {
+    "id": "a3",
+    "titre": "La vidéo : plans, montage, cadence",
+    "duree": "25 min",
+    "lecon": [
+     "Une vidéo est une suite d'images, appelées <b>images par seconde</b> (IPS ou fps) : 24 pour le cinéma, 25 en Europe (PAL), 30 pour beaucoup d'écrans et de réseaux sociaux.",
+     "Le <b>montage</b> assemble des plans. Un plan large donne le contexte, un plan serré montre l'émotion. Un bon montage raconte une histoire avec peu de moyens : garder le rythme, couper ce qui ne sert pas."
+    ],
+    "exemple": "Plan large  → on voit le lieu\nPlan serré → on voit le visage\nRaccord      → on enchaîne deux plans sans rupture visible",
+    "ressources": [
+     {
+      "label": "Kdenlive, montage vidéo gratuit",
+      "url": "https://kdenlive.org"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=montage%20vid%C3%A9o%20d%C3%A9butant%20plans%20et%20raccords"
+     },
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=video%20editing%20basics%20shot%20types%20cuts"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Qu'est-ce que la cadence (fps) ?",
+      "o": [
+       "La durée d'une vidéo",
+       "Le nombre d'images affichées par seconde",
+       "La taille de l'écran"
+      ],
+      "r": 1,
+      "e": "Plus de fps = mouvement plus fluide."
+     },
+     {
+      "q": "Un plan serré sert surtout à…",
+      "o": [
+       "montrer le contexte",
+       "montrer l'émotion d'un personnage",
+       "compresser la vidéo"
+      ],
+      "r": 1,
+      "e": "Il attire l'attention sur un détail ou un visage."
+     },
+     {
+      "q": "En Europe, la cadence standard de la télévision (PAL) est…",
+      "o": [
+       "24 fps",
+       "25 fps",
+       "60 fps"
+      ],
+      "r": 1,
+      "e": "25 images par seconde."
+     }
+    ]
+   },
+   {
+    "id": "a4",
+    "titre": "L'animation : images clés et mouvement",
+    "duree": "30 min",
+    "lecon": [
+     "Animer, c'est créer une illusion de mouvement en affichant une suite d'images légèrement différentes. On définit des <b>images clés</b> (début et fin d'un mouvement), puis le logiciel calcule les images intermédiaires : c'est l'<b>interpolation</b>.",
+     "Les principes de base : l'anticipation (on se prépare avant de bouger), l'accélération et le ralentissement (un objet ne démarre ni ne s'arrête brutalement)."
+    ],
+    "exemple": "Balle qui rebondit :\n  image 1  : balle en haut\n  image 12 : balle au sol (image clé)\n  image 24 : balle en haut\nLe logiciel crée les images entre elles.",
+    "ressources": [
+     {
+      "label": "Pencil2D, animation 2D gratuite",
+      "url": "https://www.pencil2d.org"
+     },
+     {
+      "label": "Blender, animation 3D gratuite",
+      "url": "https://www.blender.org"
+     },
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=animation%20principles%20for%20beginners%2012%20principles"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=animation%202D%20d%C3%A9butant%20images%20cl%C3%A9s"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Les images clés définissent…",
+      "o": [
+       "la fin de la vidéo",
+       "les positions importantes d'un mouvement",
+       "la couleur de fond"
+      ],
+      "r": 1,
+      "e": "Le logiciel complète entre elles."
+     },
+     {
+      "q": "L'interpolation consiste à…",
+      "o": [
+       "supprimer des images",
+       "calculer les images intermédiaires",
+       "changer le son"
+      ],
+      "r": 1,
+      "e": "C'est le calcul du mouvement entre deux images clés."
+     },
+     {
+      "q": "Pourquoi un objet doit-il ralentir avant de s'arrêter ?",
+      "o": [
+       "Pour économiser l'énergie",
+       "Pour que le mouvement paraisse naturel",
+       "Pour faire joli sans raison"
+      ],
+      "r": 1,
+      "e": "C'est un principe d'animation essentiel."
+     }
+    ]
+   }
+  ],
+  "gate": false
+ },
+ {
+  "id": "design",
+  "nom": "Design web",
+  "ico": "🎨",
+  "c": "#14b8a6",
+  "desc": "Structurer une page en HTML, la mettre en forme avec CSS, et la rendre lisible et belle.",
+  "modules": [
+   {
+    "id": "d1",
+    "titre": "HTML : la structure d'une page",
+    "duree": "25 min",
+    "lecon": [
+     "Le <b>HTML</b> décrit le contenu et sa structure. Il utilise des balises : <code>&lt;h1&gt;</code> pour le titre principal, <code>&lt;p&gt;</code> pour un paragraphe, <code>&lt;img&gt;</code> pour une image, <code>&lt;a&gt;</code> pour un lien.",
+     "Les balises s'emboîtent : une page contient un <code>body</code>, qui contient des sections, qui contiennent des paragraphes. Une bonne structure aide les moteurs de recherche et les lecteurs d'écran."
+    ],
+    "exemple": "<!DOCTYPE html>\n<html lang=\"fr\">\n  <body>\n    <h1>Mon club</h1>\n    <p>Bienvenue !</p>\n    <a href=\"https://example.com\">En savoir plus</a>\n  </body>\n</html>",
+    "ressources": [
+     {
+      "label": "HTML pour débutants (MDN, fr)",
+      "url": "https://developer.mozilla.org/fr/docs/Learn/HTML"
+     },
+     {
+      "label": "The Odin Project — HTML",
+      "url": "https://www.theodinproject.com"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=HTML%20pour%20d%C3%A9butants%20cours%20complet"
+     },
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=HTML%20crash%20course%20beginners"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Quelle balise crée le titre principal d'une page ?",
+      "o": [
+       "<h1>",
+       "<p>",
+       "<img>"
+      ],
+      "r": 0,
+      "e": "h1 est le titre de premier niveau."
+     },
+     {
+      "q": "Quelle balise crée un lien cliquable ?",
+      "o": [
+       "<a>",
+       "<body>",
+       "<title>"
+      ],
+      "r": 0,
+      "e": "a avec l'attribut href."
+     },
+     {
+      "q": "Les balises HTML…",
+      "o": [
+       "ne peuvent pas être imbriquées",
+       "peuvent être imbriquées les unes dans les autres",
+       "doivent être écrites en majuscules"
+      ],
+      "r": 1,
+      "e": "L'imbrication construit la structure."
+     }
+    ]
+   },
+   {
+    "id": "d2",
+    "titre": "CSS : couleurs, espaces et mise en page",
+    "duree": "30 min",
+    "lecon": [
+     "Le <b>CSS</b> décrit l'apparence : couleurs, polices, marges, tailles. Il sépare le fond (le contenu, en HTML) de la forme (le style, en CSS).",
+     "Le <b>flexbox</b> aligne les éléments en ligne ou en colonne. Les variables CSS (<code>--couleur</code>) facilitent la cohérence d'un site entier."
+    ],
+    "exemple": "body {\n  background: #0d1424;\n  color: #e6edf7;\n  font-family: system-ui, sans-serif;\n}\n.cartes {\n  display: flex;\n  gap: 16px;\n}",
+    "ressources": [
+     {
+      "label": "CSS pour débutants (MDN, fr)",
+      "url": "https://developer.mozilla.org/fr/docs/Learn/CSS"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=CSS%20flexbox%20expliqu%C3%A9%20d%C3%A9butant"
+     },
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=CSS%20flexbox%20complete%20guide"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "Le CSS sert à…",
+      "o": [
+       "Structurer le contenu",
+       "Décrire l'apparence (couleurs, mise en page)",
+       "Envoyer des données"
+      ],
+      "r": 1,
+      "e": "HTML structure, CSS habille."
+     },
+     {
+      "q": "Le flexbox permet…",
+      "o": [
+       "d'aligner les éléments facilement",
+       "de créer une base de données",
+       "de chiffrer une page"
+      ],
+      "r": 0,
+      "e": "C'est un outil de mise en page."
+     },
+     {
+      "q": "Pourquoi utiliser des variables CSS ?",
+      "o": [
+       "Pour ralentir le site",
+       "Pour garder des couleurs cohérentes partout",
+       "Pour remplacer le HTML"
+      ],
+      "r": 1,
+      "e": "Un seul endroit à modifier."
+     }
+    ]
+   },
+   {
+    "id": "d3",
+    "titre": "Design : contraste, hiérarchie, accessibilité",
+    "duree": "25 min",
+    "lecon": [
+     "Un bon design guide le regard. La <b>hiérarchie</b> commence par un titre visible, puis des sous-titres, puis du texte. Le <b>contraste</b> entre texte et fond doit être suffisant pour être lu facilement, y compris par des personnes malvoyantes.",
+     "Limiter les couleurs (une couleur principale, une d'accent, des neutres) rend un site plus élégant et plus rapide à comprendre."
+    ],
+    "exemple": "Texte clair sur fond sombre : lisible si le contraste est suffisant\nRègle simple : une couleur principale + une couleur d'accent + des gris",
+    "ressources": [
+     {
+      "label": "Vérifier le contraste (WebAIM, en)",
+      "url": "https://webaim.org/resources/contrastchecker/"
+     },
+     {
+      "label": "Videos (EN)",
+      "url": "https://www.youtube.com/results?search_query=web%20design%20principles%20hierarchy%20contrast%20beginners"
+     },
+     {
+      "label": "Vidéos YouTube",
+      "url": "https://www.youtube.com/results?search_query=principes%20du%20design%20graphique%20d%C3%A9butant"
+     }
+    ],
+    "quiz": [
+     {
+      "q": "La hiérarchie visuelle sert à…",
+      "o": [
+       "Décorer sans but",
+       "Guider le regard vers l'essentiel",
+       "Ralentir la lecture"
+      ],
+      "r": 1,
+      "e": "On voit d'abord ce qui est le plus important."
+     },
+     {
+      "q": "Un bon contraste est important parce que…",
+      "o": [
+       "Cela fait joli uniquement",
+       "Le texte doit rester lisible pour tous",
+       "Cela réduit le poids du site"
+      ],
+      "r": 1,
+      "e": "Lisibilité et accessibilité."
+     },
+     {
+      "q": "Combien de couleurs principales conseille-t-on pour débuter ?",
+      "o": [
+       "Une principale et une d'accent",
+       "Dix couleurs vives",
+       "Aucune couleur"
+      ],
+      "r": 0,
+      "e": "La sobriété rend le design plus clair."
+     }
+    ]
+   }
+  ],
+  "gate": false
+ }
+]

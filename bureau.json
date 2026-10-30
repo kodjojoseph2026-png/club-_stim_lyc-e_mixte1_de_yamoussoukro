@@ -1,0 +1,14 @@
+{
+  "annee": "2026-2027",
+  "membres": [
+    {"n":1,"nom":"Kodjo Josèphe","fonction":"Président","groupe":"Direction","role":"Dirige le club et coordonne ses activités.","contact":"À compléter"},
+    {"n":2,"nom":"Dongo Henoc","fonction":"Vice-président","groupe":"Direction","role":"Assiste le président et assure son intérim en cas d'absence.","contact":"À compléter"},
+    {"n":3,"nom":"Koffi Amoin Flore","fonction":"Secrétaire générale (SG)","groupe":"Direction","role":"Assure le secrétariat et le suivi administratif du club.","contact":"À compléter"},
+    {"n":4,"nom":"BACHIROU Ahoton","fonction":"Secrétaire général adjoint (SGA)","groupe":"Direction","role":"Assiste le secrétaire général dans ses missions.","contact":"À compléter"},
+    {"n":5,"nom":"Agnessan Christ Armel","fonction":"Trésorier","groupe":"Direction","role":"Assure la gestion financière et le suivi des ressources du club.","contact":"À compléter"},
+    {"n":6,"nom":"Yao David","fonction":"Responsable de la communication","groupe":"Communication et création","role":"Assure la diffusion des informations et la promotion des activités du club.","contact":"À compléter"},
+    {"n":7,"nom":"Ariel","fonction":"Responsable de la création","groupe":"Communication et création","role":"Participe à la conception des projets créatifs et à la réalisation des supports visuels du club.","contact":"À compléter"},
+    {"n":8,"nom":"À compléter","fonction":"Responsable du pôle Robotique","groupe":"Pôles techniques","role":"Coordonne les activités de robotique et les projets de conception de prototypes.","contact":"À compléter"},
+    {"n":9,"nom":"À compléter","fonction":"Responsable du pôle Innovation numérique","groupe":"Pôles techniques","role":"Coordonne les projets de programmation, d'intelligence artificielle et de développement de solutions numériques.","contact":"À compléter"}
+  ]
+}

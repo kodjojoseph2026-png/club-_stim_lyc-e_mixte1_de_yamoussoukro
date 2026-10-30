@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: club-stim-academie
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: ADMIN_CODE
+        sync: false
+      - key: NOTIF_TO
+        sync: false
