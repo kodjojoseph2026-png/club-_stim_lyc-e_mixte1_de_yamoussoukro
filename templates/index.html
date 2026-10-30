@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/static/site.css">
+<link rel="icon" href="/static/logo-club-stim.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Académie du club</title>
+<style>
+  :root{
+    --fond:#070b14; --fond2:#0d1424; --carte:rgba(255,255,255,.045); --bord:rgba(255,255,255,.09);
+    --texte:#e6edf7; --doux:#94a3b8; --vert:#22c55e; --rouge:#f43f5e; --or:#facc15;
+    --grad:linear-gradient(135deg,#22c55e 0%,#06b6d4 100%);
+    --ombre:0 20px 60px -20px rgba(0,0,0,.6);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;min-height:100vh;color:var(--texte);
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 10% -10%,rgba(34,197,94,.18),transparent 60%),
+               radial-gradient(900px 500px at 110% 10%,rgba(6,182,212,.15),transparent 60%),var(--fond);
+    background-attachment:fixed;line-height:1.6;-webkit-font-smoothing:antialiased}
+  header{position:sticky;top:0;z-index:10;backdrop-filter:blur(14px);background:rgba(7,11,20,.7);border-bottom:1px solid var(--bord)}
+  .barre-haut{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .logo{font-weight:800;letter-spacing:-.02em;font-size:18px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  nav{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+  .onglet{background:transparent;border:1px solid transparent;color:var(--doux);padding:8px 14px;border-radius:999px;cursor:pointer;font:inherit;font-size:14px;transition:.2s}
+  .onglet:hover{color:var(--texte);border-color:var(--bord)}
+  .onglet.actif{background:var(--grad);color:#04110a;font-weight:600}
+  main{max-width:1100px;margin:0 auto;padding:28px 20px 80px}
+  .hero{padding:40px 0 20px}
+  .hero h1{font-size:clamp(30px,5vw,52px);line-height:1.08;letter-spacing:-.03em;margin:0 0 14px}
+  .hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:var(--doux);font-size:17px;max-width:680px;margin:0}
+  .verre{background:var(--carte);border:1px solid var(--bord);border-radius:20px;padding:22px;box-shadow:var(--ombre);backdrop-filter:blur(10px);margin-bottom:18px}
+  h2{font-size:22px;margin:0 0 6px;letter-spacing:-.02em}
+  h3{font-size:16px;margin:18px 0 8px}
+  .note{color:var(--doux);font-size:14px}
+  input[type=text]{width:100%;max-width:420px;padding:14px 16px;border-radius:14px;border:1px solid var(--bord);background:rgba(255,255,255,.04);color:var(--texte);font:inherit;font-size:16px;outline:none;transition:.2s}
+  input[type=text]:focus{border-color:var(--vert);box-shadow:0 0 0 4px rgba(34,197,94,.15)}
+  .btn{background:var(--grad);color:#04110a;border:0;padding:13px 22px;border-radius:14px;font:inherit;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .2s;box-shadow:0 10px 30px -10px rgba(34,197,94,.6)}
+  .btn:hover{transform:translateY(-1px)}
+  .btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+  .btn.fantome{background:rgba(255,255,255,.05);color:var(--texte);border:1px solid var(--bord);box-shadow:none;font-weight:500}
+  .grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+  .domaine{position:relative;text-align:left;font:inherit;color:inherit;cursor:pointer;background:var(--carte);border:1px solid var(--bord);border-radius:18px;padding:18px;transition:.25s;overflow:hidden}
+  .domaine:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.2)}
+  .domaine.choisi{border-color:var(--c);box-shadow:0 0 0 1px var(--c) inset,0 20px 50px -25px var(--c)}
+  .domaine.verrouille{opacity:.45;cursor:not-allowed}
+  .domaine .ico{font-size:28px}
+  .domaine .nom{font-weight:700;font-size:16px;margin:8px 0 4px}
+  .domaine .meta{font-size:13px;color:var(--doux)}
+  .pastille{position:absolute;top:14px;right:14px;width:22px;height:22px;border-radius:50%;border:2px solid var(--bord);display:grid;place-items:center;font-size:12px}
+  .domaine.choisi .pastille{background:var(--c);border-color:var(--c);color:#04110a;font-weight:800}
+  .alerte{margin-top:14px;padding:14px 16px;border-radius:14px;background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.35);color:#fecdd3;font-size:14px}
+  .barre{height:8px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden;margin:10px 0}
+  .barre div{height:100%;background:var(--grad);width:0;transition:width .6s cubic-bezier(.2,.8,.2,1);border-radius:99px}
+  .section-dom{margin-top:26px}
+  .entete-dom{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .entete-dom .ico{font-size:26px}
+  .modules{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+  .module{background:rgba(255,255,255,.035);border:1px solid var(--bord);border-radius:16px;padding:16px;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:.2s}
+  .module:hover{border-color:var(--c);transform:translateY(-2px)}
+  .module .t{font-weight:600;margin-bottom:4px}
+  .module .s{font-size:13px;color:var(--doux)}
+  .etiq{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:3px 10px;border-radius:999px;background:rgba(255,255,255,.07);color:var(--doux);margin-top:8px}
+  .etiq.ok{background:rgba(34,197,94,.15);color:#86efac}
+  .lecon p{color:#cbd5e1;font-size:16px;margin:0 0 14px}
+  pre{background:#050810;border:1px solid var(--bord);color:#d1fae5;padding:16px;border-radius:14px;overflow-x:auto;font-size:13.5px;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+  .ressources{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .ressources a{color:var(--texte);text-decoration:none;font-size:14px;padding:8px 12px;border-radius:999px;border:1px solid var(--bord);background:rgba(255,255,255,.03);transition:.2s}
+  .ressources a:hover{border-color:var(--vert);color:#86efac}
+  .question{padding:16px;border-radius:14px;border:1px solid var(--bord);margin:12px 0;background:rgba(255,255,255,.025)}
+  .question label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:10px;cursor:pointer;color:#cbd5e1}
+  .question label:hover{background:rgba(255,255,255,.04)}
+  .question input{margin-top:5px;accent-color:var(--vert)}
+  .ok{color:#86efac;font-weight:600}.ko{color:#fda4af;font-weight:600}
+  .score{font-size:44px;font-weight:800;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .retour{background:none;border:0;color:var(--doux);cursor:pointer;font:inherit;padding:0;margin-bottom:14px}
+  .retour:hover{color:var(--texte)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--bord);vertical-align:top}
+  th{color:var(--doux);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+  .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600}
+  .pill.g{background:rgba(34,197,94,.15);color:#86efac}.pill.r{background:rgba(244,63,94,.15);color:#fda4af}.pill.n{background:rgba(255,255,255,.07);color:var(--doux)}
+  .hidden{display:none!important}
+  @media (max-width:640px){.barre-haut{gap:10px}nav{margin-left:0;width:100%}.onglet{flex:1;text-align:center}}
+
+  .bloc-base{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .badge-obl{font-size:11px;padding:3px 10px;border-radius:999px;background:rgba(34,197,94,.15);color:#86efac;font-weight:600}
+  .verrou{font-size:13px;color:#fda4af;margin-top:6px}
+  .classement-ligne{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--bord)}
+  .rang{font-weight:800;color:var(--doux)} .rang.top{color:#facc15}
+  .moy{font-weight:700}
+  .flash{margin:12px 0;padding:12px 14px;border-radius:12px;font-size:14px}
+  .flash.err{background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.35);color:#fecdd3}
+  .flash.ok{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.35);color:#bbf7d0}
+  .connexion input{margin-bottom:10px}
+  .chip{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.06);font-size:13px;margin:2px}
+</style>
+</head>
+<body>
+{% set page = "formation" %}
+{% include "_entete.html" %}
+
+<main>
+<!-- CONNEXION / INSCRIPTION -->
+<section id="v-accueil">
+  <div class="hero"><h1>Apprends à <span>construire</span>, pas seulement à utiliser.</h1>
+  <p>Un socle commun de culture numérique, puis une spécialité : informatique, robotique, IA, audio-visuel ou design web.</p></div>
+  <div class="verre connexion">
+    <h2>Entrer dans l'académie</h2>
+    <p class="note">Première fois ? Entre ton nom, choisis un code personnel (4 caractères ou plus) et les domaines qui t'intéressent. Si tu as déjà un compte, entre simplement ton nom et ton code.</p>
+    <div id="msg-accueil"></div>
+    <input type="text" id="nom" placeholder="Prénom Nom" maxlength="60">
+    <input type="password" id="pin" placeholder="Code personnel" maxlength="30">
+    <h3>Domaines qui t'intéressent</h3>
+    <p class="note">Le socle commun est obligatoire pour tout le monde. Tu choisis ensuite ta spécialité.</p>
+    <div class="grille" id="grille-choix" style="margin-top:10px"></div>
+    <div style="margin-top:18px"><button class="btn" onclick="entrer()">Entrer dans mon parcours</button></div>
+  </div>
+</section>
+
+<!-- PARCOURS -->
+<section id="v-parcours" class="hidden">
+  <div class="verre">
+    <div class="bloc-base">
+      <div style="flex:1;min-width:220px">
+        <h2 id="titre">Mon parcours</h2>
+        <p class="note" id="resume"></p>
+      </div>
+      <div style="text-align:right"><div class="score" id="score-global" style="font-size:36px"></div><div class="note">moyenne du socle</div></div>
+    </div>
+    <div class="barre"><div id="barre"></div></div>
+    <div id="alertes"></div>
+  </div>
+  <div id="liste"></div>
+  <div class="verre"><h3 style="margin-top:0">Mes spécialités</h3>
+    <p class="note">Tu peux modifier tes domaines à tout moment.</p>
+    <div class="grille" id="grille-choix-2" style="margin-top:10px"></div>
+    <div style="margin-top:14px"><button class="btn fantome" onclick="sauverDomaines()">Enregistrer mes domaines</button></div>
+    <div id="msg-domaines"></div>
+  </div>
+</section>
+
+<!-- MODULE -->
+<section id="v-module" class="hidden"></section>
+
+<!-- CLASSEMENT -->
+<section id="v-classement" class="hidden">
+  <div class="verre"><h2>Classement par domaine</h2>
+  <p class="note">Les scores sont visibles par tous les membres, pour la transparence et la motivation. Moyenne calculée sur les meilleures notes de chaque module.</p></div>
+  <div id="classements"></div>
+</section>
+</main>
+
+<script>
+const BASE_ID = "bases";
+const MIN_NOTE = 10;
+let contenu = [];       // domaines + modules (sans réponses)
+let session = null;     // { nom, pin, bilan }
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const dom = id => contenu.find(d => d.id === id);
+const modulesDe = id => dom(id).modules;
+
+async function api(chemin, corps) {
+  const r = await fetch(chemin, corps ? {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(corps)} : {});
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.erreur || "Erreur serveur");
+  return j;
+}
+
+function message(zone, texte, type="err") {
+  $(zone).innerHTML = `<div class="flash ${type}">${esc(texte)}</div>`;
+}
+
+function vue(nom) {
+  ["accueil","parcours","module","classement"].forEach(v => $("v-"+v).classList.toggle("hidden", v !== nom));
+  document.querySelectorAll("#nav .onglet").forEach(b => b.classList.toggle("actif", b.dataset.vue === nom));
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+function aller(v) { if (v === "parcours") rendreParcours(); if (v === "classement") chargerClassement(); vue(v); }
+
+// ---------- choix des domaines ----------
+let choisis = new Set();
+function rendreChoix(zone, sel) {
+  $(zone).innerHTML = contenu.filter(d => d.id !== BASE_ID).map(d => {
+    const on = sel.has(d.id);
+    return `<button class="domaine ${on ? "choisi":""}" style="--c:${d.c}" onclick="basculer('${zone}','${d.id}')">
+      <span class="pastille">${on ? "✓" : ""}</span>
+      <div class="ico">${d.ico}</div><div class="nom">${esc(d.nom)}</div>
+      <div class="meta">${d.modules.length} modules${d.gate ? " · accès à partir de 10/20 au socle" : ""}</div></button>`;
+  }).join("");
+}
+function basculer(zone, id) {
+  const sel = zone === "grille-choix" ? choisis : chois2;
+  sel.has(id) ? sel.delete(id) : sel.add(id);
+  rendreChoix(zone, sel);
+}
+let chois2 = new Set();
+
+// ---------- entrer ----------
+async function entrer() {
+  const nom = $("nom").value.trim(), pin = $("pin").value;
+  if (!nom || !pin) return message("msg-accueil", "Entre ton nom et ton code personnel.");
+  try {
+    const bilan = await api("/api/inscription", {nom, pin, domaines: [...choisis]});
+    session = {nom, pin, bilan};
+    aller("parcours");
+    $("nav").classList.remove("hidden");
+  } catch (e) { message("msg-accueil", e.message); }
+}
+function deconnexion() { session = null; $("nav").classList.add("hidden"); $("pin").value = ""; vue("accueil"); }
+
+async function sauverDomaines() {
+  try {
+    const bilan = await api("/api/domaines", {nom: session.nom, pin: session.pin, domaines: [...chois2]});
+    session.bilan = bilan; rendreParcours();
+    message("msg-domaines", "Domaines enregistrés.", "ok");
+  } catch (e) { message("msg-domaines", e.message); }
+}
+
+// ---------- parcours ----------
+function rendreParcours() {
+  const b = session.bilan;
+  $("titre").textContent = `Bonjour ${session.nom}`;
+  const socle = modulesDe(BASE_ID);
+  const faitsSocle = socle.filter(m => b.resultats[m.id]).length;
+  $("resume").textContent = `Socle obligatoire : ${faitsSocle}/${socle.length} modules. ${b.bases_complet ? "Socle terminé, tu peux accéder à ta spécialité." : "Termine le socle pour débloquer les spécialités."}`;
+  $("score-global").textContent = b.moyennes[BASE_ID] !== null ? b.moyennes[BASE_ID].toFixed(1) + "/20" : "—";
+  $("barre").style.width = (faitsSocle / socle.length * 100) + "%";
+  $("alertes").innerHTML = b.alertes.length ? `<div class="flash err">L'informatique demande une moyenne d'au moins ${MIN_NOTE}/20 au socle. Ta moyenne actuelle est ${b.moyennes[BASE_ID]?.toFixed(1) ?? "non calculée"}. Choisis une autre spécialité ou améliore tes notes du socle.</div>` : "";
+
+  const sel = new Set(b.domaines.filter(d => d !== BASE_ID));
+  chois2 = new Set(sel); rendreChoix("grille-choix-2", chois2);
+
+  $("liste").innerHTML = [dom(BASE_ID), ...contenu.filter(d => d.id !== BASE_ID && b.domaines.includes(d.id))].map(d => {
+    const ok = b.accessibles[d.id];
+    const moy = b.moyennes[d.id];
+    const modules = `<div class="modules">${d.modules.map(m => {
+      const r = b.resultats[m.id];
+      return `<button class="module" style="--c:${d.c}" ${ok ? "" : "disabled"} onclick="ouvrir('${m.id}')">
+        <div class="t">${esc(m.titre)}</div><div class="s">${m.duree} · 3 questions</div>
+        <span class="etiq ${r ? "ok":""}">${r ? "✓ Meilleur score : " + r.meilleur.toFixed(1) + "/20" : (ok ? "À faire" : "Verrouillé")}</span></button>`;}).join("")}</div>`;
+    return `<div class="section-dom">
+      <div class="entete-dom"><span class="ico">${d.ico}</span><div>
+        <h3 style="margin:0">${esc(d.nom)} ${d.obligatoire ? '<span class="badge-obl">Obligatoire</span>' : ""}</h3>
+        <div class="note">${moy === null ? "Aucun module évalué" : "Moyenne : " + moy.toFixed(1) + "/20"} ${b.placement === d.id ? " · <b>Ta spécialité actuelle</b>" : ""}</div>
+      </div></div>
+      ${ok ? "" : `<div class="verrou">Termine le socle pour débloquer ce domaine.</div>`}
+      ${modules}</div>`;
+  }).join("");
+}
+
+// ---------- module ----------
+function ouvrir(id) {
+  const m = [].concat(...contenu.map(d => d.modules.map(x => ({...x, dom: d})))).find(x => x.id === id);
+  $("v-module").innerHTML = `
+    <button class="retour" onclick="aller('parcours')">← Retour au parcours</button>
+    <div class="verre">
+      <div class="note"><span class="etiq" style="margin:0;background:${m.dom.c}22;color:${m.dom.c}">${m.dom.ico} ${esc(m.dom.nom)}</span> · ${m.duree}</div>
+      <h2 style="font-size:28px;margin-top:10px">${esc(m.titre)}</h2>
+      <div class="lecon" style="margin-top:14px">${m.lecon.map(p => `<p>${p}</p>`).join("")}</div>
+      <h3>Exemple</h3><pre>${esc(m.exemple)}</pre>
+      <h3>Pour aller plus loin</h3>
+      <div class="ressources">${m.ressources.map(r => `<a href="${r.url}" target="_blank" rel="noopener">${esc(r.label)} ↗</a>`).join("")}</div>
+    </div>
+    <div class="verre">
+      <h2>Évaluation</h2>
+      <p class="note">3 questions. Ta note est enregistrée et transmise au responsable. Chaque bonne réponse vaut un tiers de 20.</p>
+      <form id="quiz" onsubmit="soumettre(event,'${m.id}')">
+        ${m.questions.map((q,i) => `<div class="question"><div><b>${i+1}. ${esc(q.q)}</b></div>
+          ${q.o.map((o,j) => `<label><input type="radio" name="q${i}" value="${j}" required> ${esc(o)}</label>`).join("")}</div>`).join("")}
+        <button class="btn" type="submit">Valider mes réponses</button>
+      </form>
+      <div id="resultat"></div>
+    </div>`;
+  vue("module");
+}
+
+async function soumettre(ev, id) {
+  ev.preventDefault();
+  const f = new FormData(ev.target);
+  const reponses = [...Array(3).keys()].map(i => parseInt(f.get("q"+i), 10));
+  try {
+    const r = await api(`/api/modules/${id}/soumettre`, {nom: session.nom, pin: session.pin, reponses});
+    session.bilan = r.bilan;
+    const d = r.corrections.map((c,i) => `<div class="question"><div class="${c.bonne ? "ok":"ko"}">${c.bonne ? "Bonne réponse" : "Réponse : " + esc(c.reponse)}</div><div class="note">${esc(c.explication)}</div></div>`).join("");
+    $("resultat").innerHTML = `<div style="margin-top:18px"><div class="score">${r.note.toFixed(1)}/20</div>
+      <p class="note">${r.bonnes}/${r.total} bonnes réponses · note transmise au responsable</p>${d}
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+        <button class="btn fantome" onclick="aller('parcours')">Retour au parcours</button>
+        ${r.note < MIN_NOTE ? `<button class="btn" onclick="ouvrir('${id}')">Revoir et recommencer</button>` : ""}</div></div>`;
+  } catch (e) { $("resultat").innerHTML = `<div class="flash err">${esc(e.message)}</div>`; }
+}
+
+// ---------- classement ----------
+async function chargerClassement() {
+  const data = await fetch("/api/classement").then(r => r.json());
+  $("classements").innerHTML = Object.entries(data).map(([id, d]) => {
+    if (!d.classement.length) return `<div class="verre"><h2>${d.ico} ${esc(d.nom)}</h2><p class="note">Aucun score pour l'instant.</p></div>`;
+    return `<div class="verre"><h2>${d.ico} ${esc(d.nom)}</h2>
+      ${d.classement.map((m,i) => `<div class="classement-ligne">
+        <div class="rang ${i<3?"top":""}">${i+1}</div>
+        <div><b>${esc(m.nom)}</b> <span class="note">· ${m.modules} module(s)</span></div>
+        <div class="moy">${m.moyenne.toFixed(1)}/20</div></div>`).join("")}</div>`;
+  }).join("");
+}
+
+// ---------- démarrage ----------
+(async () => {
+  contenu = await fetch("/api/contenu").then(r => r.json());
+  rendreChoix("grille-choix", choisis);
+})();
+</script>
+</body>
+</html>

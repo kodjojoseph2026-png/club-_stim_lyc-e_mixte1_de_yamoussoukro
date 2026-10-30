@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Club STIM · Lycée Mixte 1 de Yamoussoukro</title>
+<meta name="description" content="Club STIM du Lycée Mixte 1 de Yamoussoukro : sciences, technologie, ingénierie et mathématiques. Formation au numérique, robotique, IA, audio-visuel et design.">
+<link rel="icon" href="/static/logo-club-stim.png">
+<link rel="stylesheet" href="/static/site.css">
+</head><body>
+{% set page = 'accueil' %}
+{% include '_entete.html' %}
+<main>
+  <div class="hero">
+    <img src="/static/logo-club-stim.png" alt="Logo du Club STIM">
+    <div class="txt">
+      <span class="devise">Sciences · Technologie · Ingénierie · Mathématiques</span>
+      <h1>Club STIM<br>Lycée Mixte 1 de Yamoussoukro</h1>
+      <p>Un club pour apprendre le numérique, construire des projets et découvrir les métiers de demain : informatique, robotique, intelligence artificielle, audio-visuel et design.</p>
+      <div class="btns">
+        <a class="btn" href="/formation">Commencer la formation</a>
+        <a class="btn or" href="/telecharger">Télécharger le guide (PDF)</a>
+        <a class="btn wa" href="{{ WHATSAPP_URL }}" target="_blank" rel="noopener">Rejoindre WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="bloc">
+    <h2 class="titre">Nos départements</h2>
+    <p class="sous">Tout le monde commence par le socle commun, puis choisit sa spécialité.</p>
+    <div class="grille">
+      <div class="carte" style="--c:#16a34a"><div class="ico">🧭</div><h3>Bases du numérique</h3><p>Ordinateur, Internet, web, IP, DNS, terminal. Obligatoire pour tous.</p></div>
+      <div class="carte" style="--c:#2563eb"><div class="ico">💻</div><h3>Informatique &amp; programmation</h3><p>Algorithmes, variables, conditions, boucles et fonctions en Python.</p></div>
+      <div class="carte" style="--c:#ea580c"><div class="ico">🤖</div><h3>Robotique</h3><p>Capteurs, moteurs, boucles de contrôle, robot suiveur de ligne.</p></div>
+      <div class="carte" style="--c:#7c3aed"><div class="ico">🧠</div><h3>Intelligence artificielle</h3><p>Données, apprentissage, biais et éthique de l'IA.</p></div>
+      <div class="carte" style="--c:#db2777"><div class="ico">🎬</div><h3>Audio-visuel</h3><p>Image et son numériques, montage vidéo et animation.</p></div>
+      <div class="carte" style="--c:#0d9488"><div class="ico">🎨</div><h3>Design web</h3><p>HTML, CSS, mise en page, contraste et accessibilité.</p></div>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <h2 class="titre">Comment ça marche</h2>
+    <p class="sous">Pas besoin d'être expert. On apprend en faisant.</p>
+    <div class="etapes">
+      <div class="etape"><h3>Lis le cours</h3><p>Chaque module explique une notion, avec un exemple concret et des ressources pour aller plus loin.</p></div>
+      <div class="etape"><h3>Évalue-toi</h3><p>Trois questions après chaque module. Ta note est enregistrée et tu vois les corrections.</p></div>
+      <div class="etape"><h3>Suis ton classement</h3><p>Le classement de chaque domaine est visible par tous, pour progresser ensemble.</p></div>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <div class="panneau" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+      <div style="flex:1;min-width:240px"><h2 class="titre">Le bureau du club</h2>
+      <p class="sous" style="margin:0">Président, secrétariat, trésorerie, communication et pôles techniques : qui fait quoi, et comment les joindre.</p></div>
+      <a class="btn sombre" href="/bureau">Voir le bureau</a>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <div class="panneau">
+      <h2 class="titre">Pas de connexion ?</h2>
+      <p class="sous">Le guide complet est disponible en PDF. Télécharge-le une fois, puis lis-le hors ligne sur ton téléphone ou ton ordinateur.</p>
+      <div class="btns"><a class="btn" href="/guide.pdf">Télécharger le guide (PDF, 30 pages)</a></div>
+    </div>
+  </section>
+</main>
+<footer class="pied"><b>Club STIM</b> · Lycée Mixte 1 de Yamoussoukro<br>Sciences · Technologie · Ingénierie · Mathématiques<br><a href="{{ WHATSAPP_URL }}" target="_blank" rel="noopener">Rejoindre le groupe WhatsApp du club</a></footer>
+</body></html>

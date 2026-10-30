@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Télécharger le guide · Club STIM</title>
+<link rel="icon" href="/static/logo-club-stim.png">
+<link rel="stylesheet" href="/static/site.css">
+</head><body>
+{% set page = 'telecharger' %}
+{% include '_entete.html' %}
+<main>
+  <div class="hero">
+    <img src="/static/logo-club-stim.png" alt="Logo du Club STIM">
+    <div class="txt">
+      <span class="devise">Guide gratuit</span>
+      <h1>Les bases du numérique et de la robotique</h1>
+      <p>30 pages pour comprendre l'ordinateur, Internet, le web, la programmation, la robotique, l'IA, l'audio-visuel et le design, avec des images et des exercices.</p>
+      <div class="btns"><a class="btn" href="/guide.pdf">Télécharger le PDF</a></div>
+    </div>
+  </div>
+
+  <section class="bloc">
+    <div class="panneau">
+      <h2 class="titre">Sommaire</h2>
+      <ol class="sommaire">
+        <li>Introduction : comment utiliser ce guide</li>
+        <li>Les bases : ordinateur, Internet, web, site, serveur, IP, DNS, terminal, binaire, sécurité</li>
+        <li>Informatique et programmation : algorithme, variables, conditions, boucles, fonctions</li>
+        <li>Robotique : capteurs, actionneurs, boucle de contrôle, projet robot suiveur</li>
+        <li>Intelligence artificielle : données, apprentissage, biais, éthique</li>
+        <li>Audio-visuel : image, son, vidéo, animation</li>
+        <li>Design web : HTML, CSS, contraste et hiérarchie</li>
+        <li>Corrigé des exercices et lexique</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <div class="panneau">
+      <h2 class="titre">Hors connexion</h2>
+      <p class="sous">Le PDF se lit sans internet. Enregistre-le sur ton téléphone ou transfère-le par Bluetooth ou clé USB au club.</p>
+      <p class="sous">Pour la formation interactive, il faut une connexion au moment de t'inscrire et de passer les évaluations. Tes notes sont envoyées dès que la connexion revient.</p>
+    </div>
+  </section>
+</main>
+<footer class="pied"><b>Club STIM</b> · Lycée Mixte 1 de Yamoussoukro</footer>
+</body></html>

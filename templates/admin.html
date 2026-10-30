@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/static/logo-club-stim.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tableau du responsable — Académie</title>
+<style>
+  :root{
+    --fond:#070b14; --fond2:#0d1424; --carte:rgba(255,255,255,.045); --bord:rgba(255,255,255,.09);
+    --texte:#e6edf7; --doux:#94a3b8; --vert:#22c55e; --rouge:#f43f5e; --or:#facc15;
+    --grad:linear-gradient(135deg,#22c55e 0%,#06b6d4 100%);
+    --ombre:0 20px 60px -20px rgba(0,0,0,.6);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;min-height:100vh;color:var(--texte);
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:radial-gradient(1200px 600px at 10% -10%,rgba(34,197,94,.18),transparent 60%),
+               radial-gradient(900px 500px at 110% 10%,rgba(6,182,212,.15),transparent 60%),var(--fond);
+    background-attachment:fixed;line-height:1.6;-webkit-font-smoothing:antialiased}
+  header{position:sticky;top:0;z-index:10;backdrop-filter:blur(14px);background:rgba(7,11,20,.7);border-bottom:1px solid var(--bord)}
+  .barre-haut{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .logo{font-weight:800;letter-spacing:-.02em;font-size:18px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  nav{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+  .onglet{background:transparent;border:1px solid transparent;color:var(--doux);padding:8px 14px;border-radius:999px;cursor:pointer;font:inherit;font-size:14px;transition:.2s}
+  .onglet:hover{color:var(--texte);border-color:var(--bord)}
+  .onglet.actif{background:var(--grad);color:#04110a;font-weight:600}
+  main{max-width:1100px;margin:0 auto;padding:28px 20px 80px}
+  .hero{padding:40px 0 20px}
+  .hero h1{font-size:clamp(30px,5vw,52px);line-height:1.08;letter-spacing:-.03em;margin:0 0 14px}
+  .hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:var(--doux);font-size:17px;max-width:680px;margin:0}
+  .verre{background:var(--carte);border:1px solid var(--bord);border-radius:20px;padding:22px;box-shadow:var(--ombre);backdrop-filter:blur(10px);margin-bottom:18px}
+  h2{font-size:22px;margin:0 0 6px;letter-spacing:-.02em}
+  h3{font-size:16px;margin:18px 0 8px}
+  .note{color:var(--doux);font-size:14px}
+  input[type=text]{width:100%;max-width:420px;padding:14px 16px;border-radius:14px;border:1px solid var(--bord);background:rgba(255,255,255,.04);color:var(--texte);font:inherit;font-size:16px;outline:none;transition:.2s}
+  input[type=text]:focus{border-color:var(--vert);box-shadow:0 0 0 4px rgba(34,197,94,.15)}
+  .btn{background:var(--grad);color:#04110a;border:0;padding:13px 22px;border-radius:14px;font:inherit;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .2s;box-shadow:0 10px 30px -10px rgba(34,197,94,.6)}
+  .btn:hover{transform:translateY(-1px)}
+  .btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+  .btn.fantome{background:rgba(255,255,255,.05);color:var(--texte);border:1px solid var(--bord);box-shadow:none;font-weight:500}
+  .grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+  .domaine{position:relative;text-align:left;font:inherit;color:inherit;cursor:pointer;background:var(--carte);border:1px solid var(--bord);border-radius:18px;padding:18px;transition:.25s;overflow:hidden}
+  .domaine:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.2)}
+  .domaine.choisi{border-color:var(--c);box-shadow:0 0 0 1px var(--c) inset,0 20px 50px -25px var(--c)}
+  .domaine.verrouille{opacity:.45;cursor:not-allowed}
+  .domaine .ico{font-size:28px}
+  .domaine .nom{font-weight:700;font-size:16px;margin:8px 0 4px}
+  .domaine .meta{font-size:13px;color:var(--doux)}
+  .pastille{position:absolute;top:14px;right:14px;width:22px;height:22px;border-radius:50%;border:2px solid var(--bord);display:grid;place-items:center;font-size:12px}
+  .domaine.choisi .pastille{background:var(--c);border-color:var(--c);color:#04110a;font-weight:800}
+  .alerte{margin-top:14px;padding:14px 16px;border-radius:14px;background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.35);color:#fecdd3;font-size:14px}
+  .barre{height:8px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden;margin:10px 0}
+  .barre div{height:100%;background:var(--grad);width:0;transition:width .6s cubic-bezier(.2,.8,.2,1);border-radius:99px}
+  .section-dom{margin-top:26px}
+  .entete-dom{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .entete-dom .ico{font-size:26px}
+  .modules{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+  .module{background:rgba(255,255,255,.035);border:1px solid var(--bord);border-radius:16px;padding:16px;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:.2s}
+  .module:hover{border-color:var(--c);transform:translateY(-2px)}
+  .module .t{font-weight:600;margin-bottom:4px}
+  .module .s{font-size:13px;color:var(--doux)}
+  .etiq{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:3px 10px;border-radius:999px;background:rgba(255,255,255,.07);color:var(--doux);margin-top:8px}
+  .etiq.ok{background:rgba(34,197,94,.15);color:#86efac}
+  .lecon p{color:#cbd5e1;font-size:16px;margin:0 0 14px}
+  pre{background:#050810;border:1px solid var(--bord);color:#d1fae5;padding:16px;border-radius:14px;overflow-x:auto;font-size:13.5px;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+  .ressources{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .ressources a{color:var(--texte);text-decoration:none;font-size:14px;padding:8px 12px;border-radius:999px;border:1px solid var(--bord);background:rgba(255,255,255,.03);transition:.2s}
+  .ressources a:hover{border-color:var(--vert);color:#86efac}
+  .question{padding:16px;border-radius:14px;border:1px solid var(--bord);margin:12px 0;background:rgba(255,255,255,.025)}
+  .question label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:10px;cursor:pointer;color:#cbd5e1}
+  .question label:hover{background:rgba(255,255,255,.04)}
+  .question input{margin-top:5px;accent-color:var(--vert)}
+  .ok{color:#86efac;font-weight:600}.ko{color:#fda4af;font-weight:600}
+  .score{font-size:44px;font-weight:800;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .retour{background:none;border:0;color:var(--doux);cursor:pointer;font:inherit;padding:0;margin-bottom:14px}
+  .retour:hover{color:var(--texte)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--bord);vertical-align:top}
+  th{color:var(--doux);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+  .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600}
+  .pill.g{background:rgba(34,197,94,.15);color:#86efac}.pill.r{background:rgba(244,63,94,.15);color:#fda4af}.pill.n{background:rgba(255,255,255,.07);color:var(--doux)}
+  .hidden{display:none!important}
+  @media (max-width:640px){.barre-haut{gap:10px}nav{margin-left:0;width:100%}.onglet{flex:1;text-align:center}}
+
+  .stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:18px}
+  .stat div{background:var(--carte);border:1px solid var(--bord);border-radius:16px;padding:16px}
+  .stat b{display:block;font-size:26px;letter-spacing:-.02em}
+  .stat span{color:var(--doux);font-size:13px}
+  .tbl{overflow-x:auto}
+  .vert{color:#86efac} .rouge{color:#fda4af}
+  .live{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 #22c55e;animation:p 1.6s infinite;margin-right:6px}
+  @keyframes p{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}100%{box-shadow:0 0 0 10px rgba(34,197,94,0)}}
+</style>
+</head>
+<body>
+<header style="background:#0b1a33;color:#fff;padding:12px 20px;display:flex;align-items:center;gap:12px"><img src="/static/logo-club-stim.png" alt="" style="width:40px;height:40px;border-radius:10px"><b>Tableau du responsable · Club STIM</b><span style="margin-left:auto"><a href="/" style="color:#67e8f9">Retour au site</a></span></header>
+<main>
+<div id="acces" class="verre">
+  <h2>Accès responsable</h2>
+  <p class="note">Entre le code responsable fourni par l'administrateur du serveur.</p>
+  <input type="password" id="code" placeholder="Code responsable" style="margin-top:10px">
+  <div style="margin-top:14px"><button class="btn" onclick="ouvrir()">Ouvrir le tableau</button></div>
+  <div id="msg"></div>
+</div>
+
+<div id="tableau" class="hidden">
+  <div class="stat">
+    <div><b id="s-membres">0</b><span>membres inscrits</span></div>
+    <div><b id="s-complets">0</b><span>socle terminé</span></div>
+    <div><b id="s-notes">0</b><span>évaluations passées</span></div>
+    <div><b id="s-moy">—</b><span>moyenne générale du socle</span></div>
+  </div>
+
+  <div class="verre">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <h2 style="margin:0">Membres et placement</h2>
+      <span class="note"><span class="live"></span>mise à jour automatique</span>
+    </div>
+    <div class="tbl" style="margin-top:12px"><table><thead id="th-membres"></thead><tbody id="tb-membres"></tbody></table></div>
+  </div>
+
+  <div class="verre">
+    <h2>Dernières évaluations</h2>
+    <p class="note">Chaque évaluation apparaît ici dès qu'un membre la valide.</p>
+    <div class="tbl" style="margin-top:12px"><table><thead><tr><th>Heure</th><th>Membre</th><th>Module</th><th>Domaine</th><th>Note</th></tr></thead><tbody id="tb-feed"></tbody></table></div>
+  </div>
+</div>
+</main>
+
+<script>
+let code = "";
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const NOMS = {bases:"Socle", prog:"Informatique", robot:"Robotique", ia:"IA", av:"Audio-visuel", design:"Design"};
+const DOMS = ["bases","prog","robot","ia","av","design"];
+let timer = null;
+
+async function get(chemin) {
+  const r = await fetch(chemin, {headers:{"X-Admin-Code": code}});
+  if (r.status === 401) throw new Error("Code responsable incorrect.");
+  return r.json();
+}
+
+async function ouvrir() {
+  code = $("code").value;
+  try {
+    await charger();
+    $("acces").classList.add("hidden");
+    $("tableau").classList.remove("hidden");
+    clearInterval(timer); timer = setInterval(charger, 20000);
+  } catch (e) { $("msg").innerHTML = `<div class="flash err">${esc(e.message)}</div>`; }
+}
+
+async function charger() {
+  const [membres, feed] = await Promise.all([get("/api/admin/membres"), get("/api/admin/tentatives?limite=50")]);
+  const complets = membres.filter(m => m.bases_complet).length;
+  const moyBases = membres.map(m => m.moyennes.bases).filter(x => x !== null);
+  $("s-membres").textContent = membres.length;
+  $("s-complets").textContent = complets;
+  $("s-notes").textContent = membres.reduce((s,m) => s + m.modules_faits, 0);
+  $("s-moy").textContent = moyBases.length ? (moyBases.reduce((a,b)=>a+b,0)/moyBases.length).toFixed(1) + "/20" : "—";
+
+  $("th-membres").innerHTML = `<tr><th>Membre</th><th>Placement</th>${DOMS.map(d => `<th>${NOMS[d]}</th>`).join("")}<th>Modules</th><th>Statut</th></tr>`;
+  $("tb-membres").innerHTML = membres.map(m => {
+    const cell = d => m.moyennes[d] === null || m.moyennes[d] === undefined ? "—" : m.moyennes[d].toFixed(1);
+    const place = m.placement ? `<span class="pill g">${NOMS[m.placement]}</span>` : `<span class="pill n">—</span>`;
+    const statut = m.alertes.length ? `<span class="pill r">Informatique non accessible</span>`
+                 : (m.bases_complet ? `<span class="pill g">Socle terminé</span>` : `<span class="pill n">Socle en cours</span>`);
+    return `<tr><td><b>${esc(m.nom)}</b></td><td>${place}</td>${DOMS.map(d => `<td>${cell(d)}</td>`).join("")}
+      <td>${m.modules_faits}/${m.modules_total}</td><td>${statut}</td></tr>`;
+  }).join("") || `<tr><td colspan="9" class="note">Aucun membre pour l'instant.</td></tr>`;
+
+  $("tb-feed").innerHTML = feed.map(t => `<tr><td class="note">${esc(t.date.replace("T"," "))}</td><td><b>${esc(t.nom)}</b></td>
+    <td>${esc(t.module)}</td><td class="note">${esc(t.domaine)}</td>
+    <td class="${t.note >= 10 ? "vert":"rouge"}"><b>${t.note.toFixed(1)}/20</b> <span class="note">(${t.bonnes}/${t.total})</span></td></tr>`).join("")
+    || `<tr><td colspan="5" class="note">Aucune évaluation pour l'instant.</td></tr>`;
+}
+
+async function telecharger() {
+  const r = await fetch("/api/admin/export.csv", {headers:{"X-Admin-Code": code}});
+  if (!r.ok) { alert("Code responsable incorrect."); return; }
+  const url = URL.createObjectURL(await r.blob());
+  const a = document.createElement("a"); a.href = url; a.download = "notes_academie.csv"; a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+</script>
+</body>
+</html>

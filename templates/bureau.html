@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bureau du Club STIM · {{ data.annee }}</title>
+<link rel="icon" href="/static/logo-club-stim.png">
+<link rel="stylesheet" href="/static/site.css">
+<style>
+.poste{background:#fff;border:1px solid var(--bord);border-radius:18px;padding:20px;border-left:5px solid var(--navy)}
+.poste.incomplet{border-left-color:#f59e0b}
+.poste .fonction{font-weight:800;color:var(--navy);font-size:15px;letter-spacing:.01em}
+.poste .nom{font-size:19px;font-weight:700;margin:4px 0 8px}
+.poste .nom.vide{color:#b45309;font-style:italic;font-weight:600}
+.poste p{margin:0;color:var(--doux);font-size:14px}
+.poste .contact{margin-top:12px;font-size:13px;color:#334155}
+.num{display:inline-block;background:var(--navy);color:#67e8f9;border-radius:8px;padding:2px 8px;font-size:12px;font-weight:700;margin-bottom:8px}
+.wa-bloc{background:linear-gradient(135deg,#075e54,#128c7e);color:#fff;border-radius:20px;padding:26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px}
+.wa-bloc p{margin:0;color:#dcfce7}
+.wa-bloc .btn{background:#25d366;color:#052e16;box-shadow:none}
+</style>
+</head><body>
+{% set page = 'bureau' %}
+{% include '_entete.html' %}
+<main>
+  <div class="hero" style="padding:34px">
+    <img src="/static/logo-club-stim.png" alt="Emblème du Club STIM">
+    <div class="txt">
+      <span class="devise">Année scolaire {{ data.annee }}</span>
+      <h1>Le bureau du Club STIM</h1>
+      <p>Qui fait quoi au club, et comment le joindre. Chaque poste a un rôle précis : n'hésite pas à t'adresser directement au bon responsable.</p>
+      <div class="btns"><a class="btn" href="{{ WHATSAPP_URL }}" target="_blank" rel="noopener">Rejoindre le groupe WhatsApp</a></div>
+    </div>
+  </div>
+
+  {% for groupe, membres in groupes.items() %}
+  <section class="bloc">
+    <h2 class="titre">{{ groupe }}</h2>
+    <div class="grille">
+      {% for m in membres %}
+      <article class="poste {% if m.nom == 'À compléter' %}incomplet{% endif %}">
+        <span class="num">Poste {{ m.n }}</span>
+        <div class="fonction">{{ m.fonction }}</div>
+        <div class="nom {% if m.nom == 'À compléter' %}vide{% endif %}">{{ m.nom }}</div>
+        <p>{{ m.role }}</p>
+        <div class="contact">Contact : {{ m.contact }}</div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+
+  <div class="wa-bloc">
+    <div style="flex:1;min-width:240px">
+      <h2 style="margin:0 0 6px;font-size:22px">Toutes les annonces passent par le groupe WhatsApp</h2>
+      <p>Réunions, dates des séances, résultats des concours et nouveautés du club. Rejoins le groupe pour ne rien manquer.</p>
+    </div>
+    <a class="btn" href="{{ WHATSAPP_URL }}" target="_blank" rel="noopener">Rejoindre le groupe</a>
+  </div>
+</main>
+<footer class="pied"><b>Club STIM</b> · {{ LYCEE }}<br>Sciences · Technologie · Ingénierie · Mathématiques</footer>
+</body></html>
